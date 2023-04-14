@@ -1,11 +1,26 @@
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #1e1e1e;
+}
+
 .container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 200px;
   position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: fit-content;
+  box-sizing: border-box;
 }
-.native-select {
-  position: absolute;
-  opacity: 0;
-  visibility: hidden;
-}
+
+/* .native-select {
+} */
+
 .custom-select {
   padding: 4px;
   background: #111315;
@@ -62,6 +77,8 @@
 }
 
 .active-item {
+  position: relative;
+  padding: 0 10px;
   margin: 0;
   box-shadow: inset 0px 1.5px 0px #2d3136;
   border-radius: 8px;
@@ -70,6 +87,20 @@
   max-height: fit-content;
   opacity: 1;
 }
+
+.active-item:hover > .icon path {
+  fill: #2d68ff;
+}
+
 .item.hide {
   display: none;
+}
+
+.icon {
+  position: absolute;
+  right: 10px;
+}
+
+.icon.open path {
+  fill: #2d68ff;
 }

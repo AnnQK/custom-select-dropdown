@@ -42,6 +42,7 @@ body {
   max-height: 0;
   box-sizing: border-box;
   opacity: 0;
+  transition: 300ms;
 }
 
 .list.visible {
@@ -53,6 +54,8 @@ body {
 .list.visible > .item {
   max-height: fit-content;
   opacity: 1;
+  pointer-events: all;
+  display: block;
 }
 
 .item {
@@ -69,6 +72,9 @@ body {
   border: none;
   cursor: pointer;
   max-height: 0;
+  pointer-events: none;
+  transition: 500ms;
+  display: none;
 }
 
 .item:hover {
@@ -78,6 +84,7 @@ body {
 
 .active-item {
   position: relative;
+  display: block;
   padding: 0 10px;
   margin: 0;
   box-shadow: inset 0px 1.5px 0px #2d3136;
@@ -86,8 +93,11 @@ body {
   color: #ffffff;
   max-height: fit-content;
   opacity: 1;
+  pointer-events: all;
 }
-
+.icon path {
+  transition: 300ms;
+}
 .active-item:hover > .icon path {
   fill: #2d68ff;
 }
